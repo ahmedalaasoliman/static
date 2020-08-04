@@ -9,8 +9,8 @@ pipeline{
             stage('Upload to AWS') {
                 steps {
                     retry(3){
-                        withAWS(region:'us-east-2c', credentials:'aws-static'){
-                        s3Upload(file:'index.html', bucket:'arn:aws:s3:::jenkines-website', path:'/var/lib/jenkins/workspace/static_master/index.html')
+                        withAWS(region:'us-east-2', credentials:'aws-static'){
+                        s3Upload(file:'index.html', bucket:'jenkines-website', path:'')
                     }                             
                 }
             }
